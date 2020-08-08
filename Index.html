@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="CSS/Index.css">
+      <script src="JS/parallax.js"></script>
+      <script src="JS/galeria1.js"></script>
+      <style type="text/css">
+         .custom-navbar{
+         background-color: #730C3B;
+         }
+      </style>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '602536063973720065', // Pokémon Armageddon
+    channel: '602536064887816192', // #general
+    color: '#730C3B'
+  })
+</script>
+   </head>
+   <body style="background-color: black;">
+      <nav class="navbar fixed-top navbar-dark custom-navbar">
+         <a class="navbar-brand" href="Index.html"><img src="Images/Logo.png" height="50"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="Index.html">HOME</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="HTML/info.html">INFORMATION</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="HTML/gallery.html">GALLERY</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="HTML/downloads.html">DOWNLOADS</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+        <div id ="social" class="fondosocial">
+         <div class="contenedorimagen"><a href="https://mega.nz/file/zkMW1IgQ#LH9d5_P-x_nSuWX5dwx8K9X-AuRn9a-MR7mbAn8_zvE">
+            <img class="imagenesclick1" alt="Twitter" src="Images/Download.png">
+            </a>
+         </div>
+          <div class="contenedorimagen"><a href="https://mega.nz/file/aoUkCSRA#E0WynO7-kKQwaswvTwusNgcmtYjyYmHa1tjcj8jIlZY">
+            <img class="imagenesclick1" alt="Twitter" src="Images/Descargar.png">
+            </a>
+         </div>
+
+      </div>
+      <div class="background" style=" border:10px solid; border-color:#730C3B; width:90%; display:block; margin-left:auto; margin-right:auto; padding: 100px">
+         <div id="scene" style="width: 94%; display:block; margin-left: auto; margin-right: auto;">
+            <div id ="desktopparallax1" class="layer" data-depth="0.3"><img src="Images/TrainersParallax.png"></div>
+            <div id ="titleparallax" class="layer" data-depth="0.7"><img src="Images/Banner.png"></div>
+            <div id ="desktopparallax2" class="layer" data-depth="-0.3" style="width: 100%"><img src="Images/StartersParallax.png"></div>
+         </div>
+      </div>
+      <div id ="info" class="fondoinfo" style=" border:10px solid; border-color:#730C3B; width:90%; display:block; margin-left:auto; margin-right:auto;">
+         <div class="flex-container">
+            <div class="container">
+               <img id="imageninfo" src="Images/Jaftor.png" alt="Gallery" style="width:100%">
+               <button class="btn" onclick="window.location.href = 'HTML/gallery.html';">Gallery</button>
+            </div>
+            <div class="container">
+               <img id="imageninfo" src="Images/Jaftor.png" alt="Resturang" style="width:100%">
+               <button class="btn" onclick="window.location.href = 'HTML/info.html';">Features</button>
+            </div>
+         </div>
+      </div>
+      <div id ="aaa" style=" text-align: center; padding:20px ;">
+         <div class="page-wrapper">
+            <div class="profile-box" style="display: inline-block; vertical-align: middle;">
+               <a href="#">
+                  <h3>Lead Developer</h3>
+                  <br>
+                  <img src="Images/profilepic.png" alt="ph0nsy pic">
+                  <h3>ph0nsy</h3>
+                  <h4>u/ph0nsy</h4>
+               </a>
+            </div>
+            <div class="profile-box" style="display: inline-block; vertical-align: middle; visibility: hidden; display: none;">
+               <a href="#">
+                  <h3>Artist</h3>
+                  <br>
+                  <img src="Images/profilepic.png" alt="artist pic">
+                  <h3>Artista</h3>
+                  <h4>@artista</h4>
+               </a>
+            </div>
+         </div>
+         <br>
+      </div>
+      <footer>
+         <div id ="social" class="fondosocial">
+            <div class="contenedorimagen"><a href="https://twitter.com/PokmonArmagedd1">
+               <img class="imagenesclick" alt="Twitter" src="Images/TwitterLogo.png">
+               </a>
+            </div>
+            <div class="contenedorimagen"><a href="https://www.reddit.com/r/Pokemon_Armageddon/">
+               <img class="imagenesclick" alt="Reddit" src="Images/RedditLogo.png">
+               </a>
+            </div>
+            <div class="contenedorimagen"><a href="https://discord.gg/Hd76MKs">
+               <img class="imagenesclick" alt="Twitter" src="Images/DiscordLogo.png">
+               </a>
+            </div>
+         </div>
+      </footer>
+      <script>
+         var scene = document.getElementById('scene');
+         var parallax = new Parallax(scene);
+      </script>
+   </body>
+</html>

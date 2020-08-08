@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../CSS/galeria.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <script src="../JS/info.js"></script>
+  <script src="../JS/galeria2.js"></script>
+          <style type="text/css">
+         .custom-navbar{
+         background-color: #730C3B;
+         }
+      </style>
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '602536063973720065', // Pokémon Armageddon
+    channel: '602536064887816192', // #general
+    color: '#730C3B'
+  })
+</script>
+</head>
+<body style="background-color: black;">s
+      <nav class="navbar fixed-top navbar-dark custom-navbar">
+         <a class="navbar-brand" href="../Index.html"><img src="../Images/Logo.png" height="50"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="navbar-collapse collapse" id="collapsingNavbar">
+            <ul class="navbar-nav">
+               <li class="nav-item active">
+                  <a class="nav-link" href="../Index.html">HOME</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="info.html">INFORMATION</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="gallery.html">GALLERY</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="downloads.html">DOWNLOADS</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+<div id="gallery" style="padding-top: 100px; visibility: hidden; display: none;">
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+  <div class="gallery gallery-item">
+  </div>
+</div>
+
+<div id="bg-modal" class='modal-status'>
+  <div class="bg-modal-overlay"></div>
+  <div id="bg-modal-content">
+    <div class="bg-img hide">
+      <img src="" alt="bg">
+    </div>
+</div>
+</div>
+<section style=" margin-top: 100px; display: block; width: 90%; margin-left: auto; margin-right: auto;">
+<div id="tablepress-1" style="display:block; padding: 20px">
+<p id ="esp"style="font-weight:bold; font-style:italic;">
+<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Eng"src="../Images/english flag.png"></a>
+</p>
+<h1 class="comingsoon" >Coming soon!</h1>
+</div>
+<div id="map-1" style="display:none; padding: 20px">
+  <p id ="eng"style=" display: none; font-weight:bold; font-style:italic;">
+<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Esp" src="../Images/spanish flag.jpg"></a>
+</p>
+<h1 class="comingsoon">¡Próximamente!</h1>
+</div>
+  </section>
+</body>
+</html>
+	

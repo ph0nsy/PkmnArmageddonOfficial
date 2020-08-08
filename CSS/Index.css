@@ -1,0 +1,241 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.background{
+    background-image: url("../Images/ParallaxFondo.png");
+      background-size: cover; 
+  background-repeat: no-repeat;
+    width:100%;
+}
+
+.layer img{
+    width: 100%;
+}
+
+#titleparallax{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedorimagen{
+  box-sizing:border-box;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.imagenesclick1{
+  padding-top: 50px;
+  vertical-align: middle; 
+  width: 200px; 
+  height: auto;
+}
+
+.imagenesclick{
+  vertical-align: middle; 
+  width: 200px; 
+  height: auto;
+}
+
+.fondosocial{
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+#imageninfo{
+  visibility: visible;
+}
+
+@media screen and (max-width: 1439px) {
+  #desktopparallax1{
+    visibility: hidden;
+  }
+  #desktopparallax2{
+    visibility: hidden;
+  }
+#imageninfo{
+  visibility: visible;
+}
+}
+
+@media screen and (max-width: 992px) {
+  #desktopparallax1{
+    visibility: hidden;
+  }
+  #desktopparallax2{
+    visibility: hidden;
+  }
+#imageninfo{
+  visibility: visible;
+}
+}
+
+@media screen and (max-width: 600px) {
+  #desktopparallax1{
+    visibility: hidden;
+  }
+  #desktopparallax2{
+    visibility: hidden;
+  }
+#imageninfo{
+  visibility: hidden;
+}
+}
+
+@media screen and (min-width: 1440px) {
+  #desktopparallax1{
+    visibility: visible;
+  }
+  #desktopparallax2{
+    visibility: visible;
+  }
+#imageninfo{
+  visibility: visible;
+}
+}
+
+.fondoinfo{ 
+  width: 90%; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:10px solid;
+  border-color:#730C3B;
+  margin-left:auto; 
+  margin-right:auto; 
+  padding: 100px;
+  background:linear-gradient(rgba(173, 113, 127, 0.45),rgba(173, 113, 127, 0.45)),url(../Images/Route.png);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  text-align: center;
+  border-color:#730C3B;
+  margin-top:100px;
+  margin-bottom: 100px;
+}
+@media (max-width: 5000px) {
+  .flex-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+      
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  }
+}
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height:50%;
+  margin: 15px;
+}
+
+.container img {
+  width: 100%;
+  height: 250px;
+  box-shadow: 2.5px 2.5px 1px grey;
+  border-radius: 4%;
+}
+
+.container img:hover {
+ transform: scale(1.01);
+}
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 20px;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: #730C3B;
+}
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+//
+// 
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+.page-wrapper {
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  background-color: #F5F7FA;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  padding-left: calc(5% - 16px);
+  padding-right: calc(5% - 16px);
+  /* padding: 0 5%; */
+}
+
+.profile-box {
+  background: #FFFFFF;
+  box-shadow: 0 2px 6px 0 rgba(47,83,151,0.10);
+  border-radius: 3px;
+  margin: 16px 16px;
+  padding: 16px 16px;
+  width: 200px;
+  text-align: center;
+  transition: 300ms;
+  flex-grow: 1;
+}
+
+.profile-box:hover {
+  /* box-shadow: 0 2px 6px 0 rgba(47,83,151,0.40); */
+  box-shadow: 0 0 20px 9px rgba(0,0,0,0.03);
+}
+.profile-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px 0 rgba(47,83,151,0.10);
+}
+
+.profile-box h3 {
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+.profile-box h4 {
+  transition: 500ms;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #98A0A6;
+  cursor: pointer;
+}
+.profile-box h4:hover {
+  color: #507BFC;
+  text-decoration: underline;
+}

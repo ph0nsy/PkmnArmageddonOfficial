@@ -1,0 +1,316 @@
+
+.info {
+  text-align: center;
+  padding: 10px;
+  background: #eee;
+  color: #777;
+}
+
+sm {
+  font-size: 12px
+}
+
+#gallery {
+  margin-top: 20px;
+  text-align: center
+}
+.comingsoon{
+   color: white; 
+   text-align: center; 
+   font-family: 'Alfa Slab One', cursive; 
+   font-size: 60px;
+}
+
+.gallery {
+  width: 400px;
+  height: 400px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  position: relative;
+  background-size: cover;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .gallery{
+    width: 300px;
+    height: 300px;
+  }
+  .comingsoon{
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .comingsoon{
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .gallery{
+    width: 400px;
+    height: 400px;
+  }
+ .comingsoon{
+    font-size: 60px;
+  }
+}
+.gallery-item {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+   background-position: center center;
+}
+
+.gallery-item:nth-of-type(2) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(3) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(4) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(5) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(6) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(7) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(8) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(9) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+.gallery-item:nth-of-type(10) {
+  background-image: url(https://pokemongolive.com/img/posts/gobattleleague-season1.jpg);
+}
+
+.shop .status {
+  position: absolute;
+  top: 12px;
+  right: -35px;
+  padding: 10px 40px;
+  color: #fff;
+  background-color: cadetblue;
+  content: "For Sale";
+  transform: rotate(45deg);
+  background: linear-gradient(#2bf504, #4fea32);
+}
+
+#drop-zone {
+  width: 600px;
+  height: 400px;
+  margin: 10px auto;
+  background-color: #eee;
+  border: 2px dashed #ccc;
+  background-clip: padding-box;
+  border-radius: 2px;
+}
+
+#bg-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  box-shadow: 1px 1px 2px #ccc;
+  transition: transform .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+#bg-modal-content {
+  max-height: 95vh;
+  max-width: 768px;
+  z-index: 10;
+  
+  overflow: hidden;
+  
+  position: relative
+}
+
+.modal-status {
+  transform: scale(0, 0);
+  transform-origin: 50% 50%;
+}
+
+.bg-modal-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .75);
+  top: 0;
+  left: 0;
+  z-index: 5
+}
+
+.modal-open {
+  transform: scale(1, 1);
+  tranistion: transform .5s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+}
+
+#bg-modal #bg-modal-content .bg-img,
+#bg-modal #bg-modal-content .bg-img-alt {
+  width: 100%;
+  max-width: 768px;
+  height: auto;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 4px solid #fff;
+  border-radius: 5px;
+}
+#bg-modal #bg-modal-content .bg-img-alt{
+  height: 50vh
+}
+.hide {
+  display: none
+}
+
+#bg-modal #bg-modal-content .bg-img img {
+  width: 100%;
+  height: auto
+}
+
+#bg-modal #bg-modal-content .modal-details {
+  width: auto;
+  height: auto;
+  margin: 10px auto;
+  padding: 5px;
+  display: table;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.1);
+  color: #eee;
+  text-align: center
+}
+
+.modal-details hr {
+  opacity: 0.3
+}
+
+#bg-modal #bg-modal-content .modal-details h2 {
+  font-size: 1.6vw
+}
+
+#bg-modal #bg-modal-content .modal-details p {
+  font-size: 1.4vw
+}
+
+#bg-modal #bg-modal-content .close {
+  position: absolute;
+
+  top: 0px;
+  left: 10px;
+  color: #ccc;
+  font-weight: bold;
+  font-size: 40px;
+  cursor: pointer
+}
+#bg-modal #bg-modal-content .close:hover {
+  color: #fb1b67
+}
+
+.modal-details .buttons {}
+
+.modal-details .buttons button {
+  display: block;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  border: none;
+  background-color: #0ebeff;
+  color: #eee;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer
+}
+
+.modal-details .buttons button:hover {
+  background-color: #46cbfd;
+  color: #fff
+}
+
+#spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: center;
+  align-items: center
+}
+
+.spinner1 {
+  width: 40px;
+  height: 40px;
+  background-color: #dedede;
+  border-radius: 50%;
+  position: relative;
+  -webkit-animation: spin1 1.5s linear infinite;
+  animation: spin1 1s linear infinite;
+  /*    animation-direction: alternate*/
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  /*border: 1px solid #ccc;
+    
+/*    border-right-color: aqua;*/
+  /*    box-shadow: inset 0 0 4px 2px #999, 0 0 2px 2px #eee;*/
+}
+
+.spinner1:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #525252;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  left: 50%;
+  margin-left: -15px;
+  box-shadow: inset 1px 1px #eee;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom
+}
+
+@-webkit-keyframes spin1 {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes spin1 {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+

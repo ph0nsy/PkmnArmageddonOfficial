@@ -1,4 +1,8 @@
-
+p, h1, h2, h3, h4, h5 {
+   color: white; 
+   text-align: center; 
+   font-family: 'Alfa Slab One'; 
+}
 .info {
   text-align: center;
   padding: 10px;

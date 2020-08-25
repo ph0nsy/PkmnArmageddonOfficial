@@ -1,21 +1,186 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="CSS/Index.css">
-      
-      <link rel="icon" type="image/png" href="Images/Logo.png">
-      <script src="JS/parallax.js"></script>
-      <script src="JS/galeria1.js"></script>
-      <style type="text/css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../CSS/galeria.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  
+      <link rel="icon" type="image/png" href="../Images/Logo.png">
+  <script src="../JS/info.js"></script>
+        <style type="text/css">
          .custom-navbar{
          background-color: #730C3B;
          }
+         @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+ :root {
+	 --d: 700ms;
+	 --e: cubic-bezier(0.19, 1, 0.22, 1);
+	 font-sans: 'Rubik', sans-serif;
+	 font-serif: 'Cardo', serif;
+}
+ * {
+	 box-sizing: border-box;
+}
+ html, body {
+	 height: 100%;
+}
+ body {
+	 display: grid;
+	 place-items: center;
+}
+ .page-content {
+	 display: grid;
+	 grid-gap: 1rem;
+	 padding: 1rem;
+	 max-width: 1024px;
+	 margin: 0 auto;
+	 font-family: var(--font-sans);
+}
+ @media (min-width: 600px) {
+	 .page-content {
+		 grid-template-columns: repeat(2, 1fr);
+	}
+}
+ @media (min-width: 800px) {
+	 .page-content {
+		 grid-template-columns: repeat(4, 1fr);
+	}
+}
+ .card {
+	 position: relative;
+	 display: flex;
+	 align-items: flex-end;
+	 overflow: hidden;
+	 padding: 1rem;
+	 width: 100%;
+	 text-align: center;
+	 color: whitesmoke;
+	 background-color: whitesmoke;
+	 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+}
+ @media (min-width: 600px) {
+	 .card {
+		 height: 350px;
+	}
+}
+ .card:before {
+	 content: '';
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 110%;
+	 background-size: cover;
+	 background-position: 0 0;
+	 transition: transform calc(var(--d) * 1.5) var(--e);
+	 pointer-events: none;
+}
+ .card:after {
+	 content: '';
+	 display: block;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 200%;
+	 pointer-events: none;
+	 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+	 transform: translateY(-50%);
+	 transition: transform calc(var(--d) * 2) var(--e);
+}
+ .card:nth-child(1):before {
+	 background-image: url(../Images/N.png);
+}
+ .card:nth-child(2):before {
+	 background-image: url(../Images/Armageddon.png);
+}
+ .card:nth-child(3):before {
+	 background-image: url(../Images/Cheryl.png);
+}
+ .card:nth-child(4):before {
+	 background-image: url(../Images/Leumalay.png);
+}
+ .content {
+	 position: relative;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 width: 100%;
+	 padding: 1rem;
+	 transition: transform var(--d) var(--e);
+	 z-index: 1;
+}
+ .content > * + * {
+	 margin-top: 1rem;
+}
+ .title {
+	 font-size: 1.3rem;
+	 font-weight: normal;
+	 line-height: 1.2;
+}
+ .copy {
+	 font-family: var(--font-serif);
+	 font-size: 1.125rem;
+	 font-style: italic;
+	 line-height: 1.35;
+}
+ @media (hover: hover) and (min-width: 600px) {
+	 .card:after {
+		 transform: translateY(0);
+	}
+	 .content {
+		 transform: translateY(calc(100% - 4.5rem));
+	}
+	 .content > *:not(.title) {
+		 opacity: 0;
+		 transform: translateY(1rem);
+		 transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+	}
+	 .card:hover, .card:focus-within {
+		 align-items: center;
+	}
+	 .card:hover:before, .card:focus-within:before {
+		 transform: translateY(-4%);
+	}
+	 .card:hover:after, .card:focus-within:after {
+		 transform: translateY(-50%);
+	}
+	 .card:hover .content, .card:focus-within .content {
+		 transform: translateY(0);
+	}
+	 .card:hover .content > *:not(.title), .card:focus-within .content > *:not(.title) {
+		 opacity: 1;
+		 transform: translateY(0);
+		 transition-delay: calc(var(--d) / 8);
+	}
+	 .card:focus-within:before, .card:focus-within:after, .card:focus-within .content, .card:focus-within .content > *:not(.title) {
+		 transition-duration: 0s;
+	}
+}
+ 
+ .pokepelota {
+  transition:0s 0.5s;
+}
+.pokepelota:hover{
+  transition: 0s 0.5s;
+  animation-name: pokepelota;
+  animation-duration: 4s;
+  animation-delay: -2s;
+  }
+
+@keyframes pokepelota {
+  0% { transform: translate(0, 0) rotate(0); }
+  20% { transform: translate(-10px, 0) rotate(-20deg); }
+  30% { transform: translate(10px, 0) rotate(20deg); }
+  50% { transform: translate(-10px, 0) rotate(-10deg); }
+  60% { transform: translate(10px, 0) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0); }
+}
       </style>
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
   new Crate({
@@ -24,102 +189,115 @@
     color: '#730C3B'
   })
 </script>
-   </head>
-   <body style="background-color: black;">
+</head>
+<body style="background-color: black;">s
       <nav class="navbar fixed-top navbar-dark custom-navbar">
-         <a class="navbar-brand" href="index.html"><img src="Images/Logo.png" height="75"></a>
+         <a class="navbar-brand" href="../index.html"><img src="../Images/Logo.png" height="75"></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
          <span class="navbar-toggler-icon"></span>
          </button>
          <div class="navbar-collapse collapse" id="collapsingNavbar">
             <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html">HOME</a>
+               </li>
                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">HOME</a>
+                  <a class="nav-link" href="info.html">INFORMATION</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="HTML/info.html">INFORMATION</a>
+                  <a class="nav-link" href="gallery.html">GALLERY</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="HTML/gallery.html">GALLERY</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="HTML/downloads.html">DOWNLOADS</a>
+                  <a class="nav-link" href="downloads.html">DOWNLOADS</a>
                </li>
             </ul>
          </div>
       </nav>
-        <div id ="social" class="fondosocial">
-         <div class="contenedorimagen"><a href="https://mega.nz/file/zkMW1IgQ#LH9d5_P-x_nSuWX5dwx8K9X-AuRn9a-MR7mbAn8_zvE">
-            <img class="imagenesclick1" alt="Twitter" src="Images/Download.png">
-            </a>
-         </div>
-          <div class="contenedorimagen"><a href="https://mega.nz/file/aoUkCSRA#E0WynO7-kKQwaswvTwusNgcmtYjyYmHa1tjcj8jIlZY">
-            <img class="imagenesclick1" alt="Twitter" src="Images/Descargar.png">
-            </a>
-         </div>
-
-      </div>
-      <div class="background" style=" border:10px solid; border-color:#730C3B; width:90%; display:block; margin-left:auto; margin-right:auto; padding: 100px">
-         <div id="scene" style="width: 94%; display:block; margin-left: auto; margin-right: auto;">
-            <div id ="desktopparallax1" class="layer" data-depth="0.3"><img src="Images/TrainersParallax.png"></div>
-            <div id ="titleparallax" class="layer" data-depth="0.7"><img src="Images/Banner.png"></div>
-            <div id ="desktopparallax2" class="layer" data-depth="-0.3" style="width: 100%"><img src="Images/StartersParallax.png"></div>
-         </div>
-      </div>
-      <div id ="info" class="fondoinfo" style=" border:10px solid; border-color:#730C3B; width:90%; display:block; margin-left:auto; margin-right:auto;">
-         <div class="flex-container">
-            <div class="container">
-               <img id="imageninfo" src="Images/Jaftor.png" alt="Gallery" style="width:100%">
-               <button class="btn" onclick="window.location.href = 'HTML/gallery.html';">Gallery</button>
-            </div>
-            <div class="container">
-               <img id="imageninfo" src="Images/Jaftor.png" alt="Resturang" style="width:100%">
-               <button class="btn" onclick="window.location.href = 'HTML/info.html';">Features</button>
-            </div>
-         </div>
-      </div>
-      <div id ="aaa" style=" text-align: center; padding:20px ;">
-         <div class="page-wrapper">
-            <div class="profile-box" style="display: inline-block; vertical-align: middle;">
-               <a href="https://www.reddit.com/user/ph0nsy">
-                  <h3>Lead Developer</h3>
-                  <br>
-                  <img src="Images/profilepic.png" alt="ph0nsy pic">
-                  <h3>ph0nsy</h3>
-                  <h4>u/ph0nsy</h4>
-               </a>
-            </div>
-            <div class="profile-box" style="display: inline-block; vertical-align: middle; visibility: hidden; display: none;">
-               <a href="#">
-                  <h3>Artist</h3>
-                  <br>
-                  <img src="Images/profilepic.png" alt="artist pic">
-                  <h3>Artista</h3>
-                  <h4>@artista</h4>
-               </a>
-            </div>
-         </div>
-         <br>
-      </div>
-      <footer>
-         <div id ="social" class="fondosocial">
-            <div class="contenedorimagen"><a href="https://twitter.com/PokmonArmagedd1">
-               <img class="imagenesclick" alt="Twitter" src="Images/TwitterLogo.png">
-               </a>
-            </div>
-            <div class="contenedorimagen"><a href="https://www.reddit.com/r/Pokemon_Armageddon/">
-               <img class="imagenesclick" alt="Reddit" src="Images/RedditLogo.png">
-               </a>
-            </div>
-            <div class="contenedorimagen"><a href="https://discord.gg/Hd76MKs">
-               <img class="imagenesclick" alt="Twitter" src="Images/DiscordLogo.png">
-               </a>
-            </div>
-         </div>
-      </footer>
-      <script>
-         var scene = document.getElementById('scene');
-         var parallax = new Parallax(scene);
-      </script>
-   </body>
+  <section style=" margin-top: 100px; display: block; width: 90%; margin-left: auto; margin-right: auto;">
+<div id="tablepress-1" style="display:block; padding: 20px">
+<p id ="esp"style="font-weight:bold; font-style:italic;">
+<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Esp"src="../Images/spanish flag.jpg"></a>
+</p>
+  <div>
+    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
+    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
+    <h1 class="comingsoon"style="text-align: center;">MEET THE BEST TRAINERS IN AN UNFORGETABLE ADVENTURE!</h1>
+    <div style="padding: 30px">
+    	<h3>Travel around the Jaftor region to become the best Pokémon trainer!</h3>
+    	<h3>Meet lots of trainers, make new friends, and discover Team Armageddon's plans on your way to uncover the secrets of the region's past.</h3>
+    </div>
+     <img src="../Images/Jaftor.png" class="img-fluid" style="padding: 30px; width: 50%; height: auto; margin-right:auto; margin-left:auto; display:block;">
+    <h2 style="text-align: center; padding:100px;">WHO WILL JOIN ME IN THIS ADVENTURE?</h2>
+  </div>
+  <div class="page-content">
+<div class="card">
+        <div class="content">
+            <h2 class="title">N</h2>
+            <p class="copy">Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains</p>
+        </div>
+</div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Armageddon</h2>
+            <p class="copy">Plan your next beach trip with these fabulous destinations</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Cheryl</h2>
+            <p class="copy">It's the desert you've always dreamed of</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Leumalay</h2>
+            <p class="copy">Seriously, straight up, just blast off into outer space today</p>
+        </div>
+    </div>
+</div>	
+</div>
+<div id="map-1" style="display:none; padding: 20px">
+  <p id ="eng"style=" display: none; font-weight:bold; font-style:italic;">
+<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Eng" src="../Images/english flag.png"></a>
+</p>
+<div>
+    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
+    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
+    <h1 class="comingsoon"style="text-align: center;">¡CONOCE A LOS MEJORES ENTRENADORES EN UNA AVENTURA INOLVIDABLE!</h1>
+    <div style="padding: 30px">
+    	<h3>¡Viaja por la región de Jaftor para convertirte en el mejor entrenador Pokémon!</h3>
+    	<h3>Conoce muchos entrenadores, haz nuevos amigos y descubre los planes del Equipo Armageddon en tu camino a descubrir los secretos del pasado de la región.</h3>
+    </div>
+     <img src="../Images/Jaftor.png" class="img-fluid" style="padding: 30px; width: 50%; height: auto; margin-right:auto; margin-left:auto; display:block;">
+    <h2 style="text-align: center; padding:100px;">¿QUIÉN SE UNIRÁ A MI EN ESTA AVENTURA?</h2>
+  </div>
+  <div class="page-content">
+<div class="card">
+        <div class="content">
+            <h2 class="title">N</h2>
+            <p class="copy">Un extranjero que deambula por la región en busca de algo...</p>
+        </div>
+</div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Armageddon</h2>
+            <p class="copy">La figura publica y mascota de la organización defensora de la naturaleza, el 'Equipo Armageddon'.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Cheryl</h2>
+            <p class="copy">Una extranjera que se ha comprometido a cuidar los bosques de la región. También es la líder del 1er gimnasio.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="content">
+            <h2 class="title">Leumalay</h2>
+            <p class="copy">Encargada de que los espiritus atrapados de la región encuentren su camino. También es la líder del 2o gimnasio.</p>
+        </div>
+    </div>
+</div>
+</div>
+  </section>
+</body>
 </html>

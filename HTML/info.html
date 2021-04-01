@@ -108,6 +108,16 @@
          grid-template-columns: repeat(4, 1fr);
          }
          }
+         .iframe{
+         	height: 800px; width:800px; display: block; margin-left: auto; margin-right: auto;
+         }
+         @media (max-width: 1000px){
+
+         .iframe {
+         	width: 400px;
+         	height: 500px;
+         }
+         }
          .card {
          position: relative;
          display: flex;
@@ -416,6 +426,9 @@
                </div>
             </div>
          </div>
+         
+         <h2 class="title">All Teams</h2>
+         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoqwiWh6rAvZ3PTWsYOkQ9wqa77vZDxISCKLUToFlmxzlDxe5Oo71CF4cGdWYVYcjGad6CDBJB1hBe/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" class="iframe"></iframe>
       </section>
       <div id="myModal" class="modal">
          <div class="modal-content" style="background-color:#C3C3C3">

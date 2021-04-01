@@ -1,196 +1,302 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../CSS/galeria.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-  
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="../CSS/galeria.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
       <link rel="icon" type="image/png" href="../Images/Logo.png">
-  <script src="../JS/info.js"></script>
-        <style type="text/css">
+      <script src="../JS/info.js"></script>
+      <style type="text/css">
          .custom-navbar{
          background-color: #730C3B;
          }
          @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
- :root {
-	 --d: 700ms;
-	 --e: cubic-bezier(0.19, 1, 0.22, 1);
-	 font-sans: 'Rubik', sans-serif;
-	 font-serif: 'Cardo', serif;
-}
- * {
-	 box-sizing: border-box;
-}
- html, body {
-	 height: 100%;
-}
- body {
-	 display: grid;
-	 place-items: center;
-}
- .page-content {
-	 display: grid;
-	 grid-gap: 1rem;
-	 padding: 1rem;
-	 max-width: 1024px;
-	 margin: 0 auto;
-	 font-family: var(--font-sans);
-}
- @media (min-width: 600px) {
-	 .page-content {
-		 grid-template-columns: repeat(2, 1fr);
-	}
-}
- @media (min-width: 800px) {
-	 .page-content {
-		 grid-template-columns: repeat(4, 1fr);
-	}
-}
- .card {
-	 position: relative;
-	 display: flex;
-	 align-items: flex-end;
-	 overflow: hidden;
-	 padding: 1rem;
-	 width: 100%;
-	 text-align: center;
-	 color: whitesmoke;
-	 background-color: whitesmoke;
-	 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
-}
- @media (min-width: 600px) {
-	 .card {
-		 height: 350px;
-	}
-}
- .card:before {
-	 content: '';
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 height: 110%;
-	 background-size: cover;
-	 background-position: 0 0;
-	 transition: transform calc(var(--d) * 1.5) var(--e);
-	 pointer-events: none;
-}
- .card:after {
-	 content: '';
-	 display: block;
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 width: 100%;
-	 height: 200%;
-	 pointer-events: none;
-	 background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
-	 transform: translateY(-50%);
-	 transition: transform calc(var(--d) * 2) var(--e);
-}
- .card:nth-child(1):before {
-	 background-image: url(../Images/N.png);
-}
- .card:nth-child(2):before {
-	 background-image: url(../Images/Armageddon.png);
-}
- .card:nth-child(3):before {
-	 background-image: url(../Images/Cheryl.png);
-}
- .card:nth-child(4):before {
-	 background-image: url(../Images/Leumalay.png);
-}
- .content {
-	 position: relative;
-	 display: flex;
-	 flex-direction: column;
-	 align-items: center;
-	 width: 100%;
-	 padding: 1rem;
-	 transition: transform var(--d) var(--e);
-	 z-index: 1;
-}
- .content > * + * {
-	 margin-top: 1rem;
-}
- .title {
-	 font-size: 1.3rem;
-	 font-weight: normal;
-	 line-height: 1.2;
-}
- .copy {
-	 font-family: var(--font-serif);
-	 font-size: 1.125rem;
-	 font-style: italic;
-	 line-height: 1.35;
-}
- @media (hover: hover) and (min-width: 600px) {
-	 .card:after {
-		 transform: translateY(0);
-	}
-	 .content {
-		 transform: translateY(calc(100% - 4.5rem));
-	}
-	 .content > *:not(.title) {
-		 opacity: 0;
-		 transform: translateY(1rem);
-		 transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-	}
-	 .card:hover, .card:focus-within {
-		 align-items: center;
-	}
-	 .card:hover:before, .card:focus-within:before {
-		 transform: translateY(-4%);
-	}
-	 .card:hover:after, .card:focus-within:after {
-		 transform: translateY(-50%);
-	}
-	 .card:hover .content, .card:focus-within .content {
-		 transform: translateY(0);
-	}
-	 .card:hover .content > *:not(.title), .card:focus-within .content > *:not(.title) {
-		 opacity: 1;
-		 transform: translateY(0);
-		 transition-delay: calc(var(--d) / 8);
-	}
-	 .card:focus-within:before, .card:focus-within:after, .card:focus-within .content, .card:focus-within .content > *:not(.title) {
-		 transition-duration: 0s;
-	}
-}
- 
- .pokepelota {
-  transition:0s 0.5s;
-}
-.pokepelota:hover{
-  transition: 0s 0.5s;
-  animation-name: pokepelota;
-  animation-duration: 4s;
-  animation-delay: -2s;
-  }
-
-@keyframes pokepelota {
-  0% { transform: translate(0, 0) rotate(0); }
-  20% { transform: translate(-10px, 0) rotate(-20deg); }
-  30% { transform: translate(10px, 0) rotate(20deg); }
-  50% { transform: translate(-10px, 0) rotate(-10deg); }
-  60% { transform: translate(10px, 0) rotate(10deg); }
-  100% { transform: translate(0, 0) rotate(0); }
-}
+         :root {
+         --d: 700ms;
+         --e: cubic-bezier(0.19, 1, 0.22, 1);
+         font-sans: 'Rubik', sans-serif;
+         font-serif: 'Cardo', serif;
+         }
+         tr td{
+         padding: 18px;
+         text-align: center;
+         font-family: Arial, Helvetica, sans-serif;
+         }
+         .trainer{
+         display:table; 
+         margin-left: auto; 
+         margin-right: auto; 
+         padding-top: 10px;
+         }
+         .columnas{
+         float: left;
+         padding: 10px;
+         }
+         /* Left and right column */
+         .columnas.lado {
+         width: 100%;
+         }
+         /* Middle column */
+         .columnas.medio {
+         width: 100%;
+         }
+         /* Clear floats after the columns */
+         .fila:after {
+         content: "";
+         display: table;
+         clear: both;
+         }
+         .column4{position:relative;min-height:1px;padding-right:15px;padding-left:15px; float:left;width: 33.33333%}
+         .imgtrainer{
+         width: 400px; 
+         border: solid 10px white; 
+         border-radius: 10%}
+         /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+         @media screen and (min-width: 1191px)  {
+         .column4{
+         width: 33%;
+         }
+         }
+         @media screen and (max-width: 1190px) and (min-width: 832px)  {
+         .column4{
+         width: 50%;
+         }
+         }
+         @media screen and (max-width: 831px) {
+         .column4{
+         width: 100%;
+         }
+         }
+         @media screen and (max-width: 830px) {
+         .column4{
+         width: 100%;
+         }
+         .imgtrainer{
+         width: 200px;
+         }
+         }
+         * {
+         box-sizing: border-box;
+         }
+         html, body {
+         height: 100%;
+         }
+         body {
+         display: grid;
+         place-items: center;
+         }
+         .page-content {
+         display: grid;
+         grid-gap: 1rem;
+         padding: 1rem;
+         max-width: 1024px;
+         margin: 0 auto;
+         font-family: var(--font-sans);
+         }
+         @media (min-width: 600px) {
+         .page-content {
+         grid-template-columns: repeat(2, 1fr);
+         }
+         }
+         @media (min-width: 800px) {
+         .page-content {
+         grid-template-columns: repeat(4, 1fr);
+         }
+         }
+         .card {
+         position: relative;
+         display: flex;
+         align-items: flex-end;
+         overflow: hidden;
+         padding: 1rem;
+         width: 100%;
+         text-align: center;
+         color: whitesmoke;
+         background-color: whitesmoke;
+         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+         }
+         @media (min-width: 600px) {
+         .card {
+         height: 350px;
+         }
+         }
+         .card:before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 110%;
+         background-size: cover;
+         background-position: 0 0;
+         transition: transform calc(var(--d) * 1.5) var(--e);
+         pointer-events: none;
+         }
+         .card:after {
+         content: '';
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 200%;
+         pointer-events: none;
+         background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+         transform: translateY(-50%);
+         transition: transform calc(var(--d) * 2) var(--e);
+         }
+         .card:nth-child(1):before {
+         background-image: url(../Images/N.png);
+         }
+         .card:nth-child(2):before {
+         background-image: url(../Images/Armageddon.png);
+         }
+         .card:nth-child(3):before {
+         background-image: url(../Images/Cheryl.png);
+         }
+         .card:nth-child(4):before {
+         background-image: url(../Images/Leumalay.png);
+         }
+         .content {
+         position: relative;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 100%;
+         padding: 1rem;
+         transition: transform var(--d) var(--e);
+         z-index: 1;
+         }
+         .content > * + * {
+         margin-top: 1rem;
+         }
+         .title {
+         font-size: 1.3rem;
+         font-weight: normal;
+         line-height: 1.2;
+         }
+         .copy {
+         font-family: var(--font-serif);
+         font-size: 1.125rem;
+         font-style: italic;
+         line-height: 1.35;
+         }
+         @media (hover: hover) and (min-width: 600px) {
+         .card:after {
+         transform: translateY(0);
+         }
+         .content {
+         transform: translateY(calc(100% - 4.5rem));
+         }
+         .content > *:not(.title) {
+         opacity: 0;
+         transform: translateY(1rem);
+         transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+         }
+         .card:hover, .card:focus-within {
+         align-items: center;
+         }
+         .card:hover:before, .card:focus-within:before {
+         transform: translateY(-4%);
+         }
+         .card:hover:after, .card:focus-within:after {
+         transform: translateY(-50%);
+         }
+         .card:hover .content, .card:focus-within .content {
+         transform: translateY(0);
+         }
+         .card:hover .content > *:not(.title), .card:focus-within .content > *:not(.title) {
+         opacity: 1;
+         transform: translateY(0);
+         transition-delay: calc(var(--d) / 8);
+         }
+         .card:focus-within:before, .card:focus-within:after, .card:focus-within .content, .card:focus-within .content > *:not(.title) {
+         transition-duration: 0s;
+         }
+         }
+         .pokepelota {
+         transition:0s 0.5s;
+         }
+         .pokepelota:hover{
+         transition: 0s 0.5s;
+         animation-name: pokepelota;
+         animation-duration: 4s;
+         animation-delay: -2s;
+         }
+         /*Min resolution = 400px*/
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         padding-top: 100px; /* Location of the box */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content */
+         .modal-content {
+         background-color: #fefefe;
+         margin: auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 90%;
+         }
+         /* The Close Button */
+         .close {
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         }
+         * The Close Button */
+         .close1 {
+         color: #aaaaaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close1:hover,
+         .close1:focus {
+         color: #000;
+         text-decoration: none;
+         cursor: pointer;
+         }
+         a:hover{
+         cursor: pointer;
+         }
+         @keyframes pokepelota {
+         0% { transform: translate(0, 0) rotate(0); }
+         20% { transform: translate(-10px, 0) rotate(-20deg); }
+         30% { transform: translate(10px, 0) rotate(20deg); }
+         50% { transform: translate(-10px, 0) rotate(-10deg); }
+         60% { transform: translate(10px, 0) rotate(10deg); }
+         100% { transform: translate(0, 0) rotate(0); }
+         }
       </style>
-<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-  new Crate({
-    server: '602536063973720065', // Pokémon Armageddon
-    channel: '602536064887816192', // #general
-    color: '#730C3B'
-  })
-</script>
-</head>
-<body style="background-color: black;">s
+      <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+         new Crate({
+           server: '602536063973720065', // Pokémon Armageddon
+           channel: '602536064887816192', // #general
+           color: '#730C3B'
+         })
+      </script>
+   </head>
+   <body style="background-color: black;">
       <nav class="navbar fixed-top navbar-dark custom-navbar">
          <a class="navbar-brand" href="../index.html"><img src="../Images/Logo.png" height="75"></a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
@@ -213,91 +319,451 @@
             </ul>
          </div>
       </nav>
-  <section style=" margin-top: 100px; display: block; width: 90%; margin-left: auto; margin-right: auto;">
-<div id="tablepress-1" style="display:block; padding: 20px">
-<p id ="esp"style="font-weight:bold; font-style:italic;">
-<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Esp"src="../Images/spanish flag.jpg"></a>
-</p>
-  <div>
-    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
-    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
-    <h1 class="comingsoon"style="text-align: center;">MEET THE BEST TRAINERS IN AN UNFORGETABLE ADVENTURE!</h1>
-    <div style="padding: 30px">
-    	<h3>Travel around the Jaftor region to become the best Pokémon trainer!</h3>
-    	<h3>Meet lots of trainers, make new friends, and discover Team Armageddon's plans on your way to uncover the secrets of the region's past.</h3>
-    </div>
-     <img src="../Images/Jaftor.png" class="img-fluid" style="border:10px solid; border-color:#730C3B; width: 80%; height: auto; margin-right:auto; margin-left:auto; display:block;">
-    <h2 style="text-align: center; padding:100px;">WHO WILL JOIN ME IN THIS ADVENTURE?</h2>
-  </div>
-  <div class="page-content">
-<div class="card">
-        <div class="content">
-            <h2 class="title">N</h2>
-            <p class="copy">A foreigner who wanders the region looking for something...</p>
-        </div>
-</div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Armageddon</h2>
-            <p class="copy">The public figure and mascot of the organization defending nature, the 'Team Armageddon'.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Cheryl</h2>
-            <p class="copy">A foreigner who is committed to taking care of the forests of the region. She is also the leader of the 1st gym.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Leumalay</h2>
-            <p class="copy">In charge of the trapped spirits of the region finding their way. She is also the leader of the 2nd gym.</p>
-        </div>
-    </div>
-</div>	
-</div>
-<div id="map-1" style="display:none; padding: 20px">
-  <p id ="eng"style=" display: none; font-weight:bold; font-style:italic;">
-<a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Eng" src="../Images/english flag.png"></a>
-</p>
-<div>
-    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
-    <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
-    <h1 class="comingsoon"style="text-align: center;">¡CONOCE A LOS MEJORES ENTRENADORES EN UNA AVENTURA INOLVIDABLE!</h1>
-    <div style="padding: 30px">
-    	<h3>¡Viaja por la región de Jaftor para convertirte en el mejor entrenador Pokémon!</h3>
-    	<h3>Conoce muchos entrenadores, haz nuevos amigos y descubre los planes del Equipo Armageddon en tu camino a descubrir los secretos del pasado de la región.</h3>
-    </div>
-     <img src="../Images/Jaftor.png" class="img-fluid" style="border:10px solid; border-color:#730C3B; width: 80%; height: auto; margin-right:auto; margin-left:auto; display:block;">
-    <h2 style="text-align: center; padding:100px;">¿QUIÉN SE UNIRÁ A MI EN ESTA AVENTURA?</h2>
-  </div>
-  <div class="page-content">
-<div class="card">
-        <div class="content">
-            <h2 class="title">N</h2>
-            <p class="copy">Un extranjero que deambula por la región en busca de algo...</p>
-        </div>
-</div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Armageddon</h2>
-            <p class="copy">La figura publica y mascota de la organización defensora de la naturaleza, el 'Equipo Armageddon'.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Cheryl</h2>
-            <p class="copy">Una extranjera que se ha comprometido a cuidar los bosques de la región. También es la líder del 1er gimnasio.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="content">
-            <h2 class="title">Leumalay</h2>
-            <p class="copy">Encargada de que los espiritus atrapados de la región encuentren su camino. También es la líder del 2o gimnasio.</p>
-        </div>
-    </div>
-</div>
-</div>
-  </section>
-</body>
+      <section style=" margin-top: 100px; display: block; width: 90%; margin-left: auto; margin-right: auto;">
+         <div id="tablepress-1" style="display:block; padding: 20px">
+            <p id ="esp"style="font-weight:bold; font-style:italic;">
+               <a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Esp"src="../Images/spanish flag.jpg"></a>
+            </p>
+            <div>
+               <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
+               <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
+               <h1 class="comingsoon"style="text-align: center;">MEET THE BEST TRAINERS IN AN UNFORGETABLE ADVENTURE!</h1>
+               <div style="padding: 30px">
+                  <h3>Travel around the Jaftor region to become the best Pokémon trainer!</h3>
+                  <h3>Meet lots of trainers, make new friends, and discover Team Armageddon's plans on your way to uncover the secrets of the region's past.</h3>
+               </div>
+               <img src="../Images/Jaftor.png" class="img-fluid" style="border:10px solid; border-color:#730C3B; width: 80%; height: auto; margin-right:auto; margin-left:auto; display:block;">
+               <h2 style="text-align: center; padding:100px;">WHO WILL JOIN ME IN THIS ADVENTURE?</h2>
+            </div>
+            <div class="page-content">
+               <div class="card">
+                  <button id="myBtn1" style="text-decoration:none">
+                     <div class="content">
+                        <h2 class="title">N</h2>
+                        <p class="copy">A foreigner who wanders the region looking for something...</p>
+                        <p class="copy">Click to see my team!</p>
+                     </div>
+                  </button>
+               </div>
+               <div class="card">
+                  <div class="content">
+                     <h2 class="title">Armageddon</h2>
+                     <p class="copy">The public figure and mascot of the organization defending nature, the 'Team Armageddon'.</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="content">
+                     <h2 class="title">Cheryl</h2>
+                     <p class="copy">A foreigner who is committed to taking care of the forests of the region. She is also the leader of the 1st gym.</p>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class="content">
+                     <h2 class="title">Leumalay</h2>
+                     <p class="copy">In charge of the trapped spirits of the region finding their way. She is also the leader of the 2nd gym.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="map-1" style="display:none; padding: 20px">
+            <p id ="eng"style=" display: none; font-weight:bold; font-style:italic;">
+               <a href="javascript:SwapDivsWithClick('tablepress-1','map-1'); javascript:SwapDivsWithClick('esp','eng')"><img width="20" height="auto" alt="Eng" src="../Images/english flag.png"></a>
+            </p>
+            <div>
+               <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-left pokepelota" alt="Pokeball" style="padding: 30px">
+               <img width="200" src="https://cdn.pixabay.com/photo/2019/11/27/14/06/pokemon-4657023_1280.png" class="float-right pokepelota" alt="Pokeball" style="padding: 30px">
+               <h1 class="comingsoon"style="text-align: center;">¡CONOCE A LOS MEJORES ENTRENADORES EN UNA AVENTURA INOLVIDABLE!</h1>
+               <div style="padding: 30px">
+                  <h3>¡Viaja por la región de Jaftor para convertirte en el mejor entrenador Pokémon!</h3>
+                  <h3>Conoce muchos entrenadores, haz nuevos amigos y descubre los planes del Equipo Armageddon en tu camino a descubrir los secretos del pasado de la región.</h3>
+               </div>
+               <img src="../Images/Jaftor.png" class="img-fluid" style="border:10px solid; border-color:#730C3B; width: 80%; height: auto; margin-right:auto; margin-left:auto; display:block;">
+               <h2 style="text-align: center; padding:100px;">¿QUIÉN SE UNIRÁ A MI EN ESTA AVENTURA?</h2>
+            </div>
+            <div class="page-content">
+               <div class="card">
+                  <button id="myBtn" style="text-decoration:none">
+                     <div class="content">
+                        <h2 class="title">N</h2>
+                        <p class="copy">Un extranjero que deambula por la región en busca de algo...</p>
+                        <p class="copy">¡Haz click para ver mi equipo!</p>
+                     </div>
+                  </button>
+               </div>
+               <div class="card">
+                  <a href="info.html">
+                     <div class="content">
+                        <h2 class="title">Armageddon</h2>
+                        <p class="copy">La figura publica y mascota de la organización defensora de la naturaleza, el 'Equipo Armageddon'.</p>
+                     </div>
+                  </a>
+               </div>
+               <div class="card">
+                  <a href="">
+                     <div class="content">
+                        <h2 class="title">Cheryl</h2>
+                        <p class="copy">Una extranjera que se ha comprometido a cuidar los bosques de la región. También es la líder del 1er gimnasio.</p>
+                     </div>
+                  </a>
+               </div>
+               <div class="card">
+                  <a href="">
+                     <div class="content">
+                        <h2 class="title">Leumalay</h2>
+                        <p class="copy">Encargada de que los espiritus atrapados de la región encuentren su camino. También es la líder del 2o gimnasio.</p>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </section>
+      <div id="myModal" class="modal">
+         <div class="modal-content" style="background-color:#C3C3C3">
+            <div class="fila">
+               <div class="columnas lado">
+                  <div class="trainer"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9e/Black_White_N.png/384px-Black_White_N.png" class= "imgtrainer"></div>
+               </div>
+               <div class="columnas medio">
+                  <div class="container-fluid">
+                     <div class="column4" style="padding: 20px; height:">
+                        <table style=" padding: 25px; border: solid 5px;   border-color: white; background: radial-gradient(#9DB7F5, #927D44); width: 100%; height:100%; border-radius: 2%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/gastrodon"><img src="https://img.pokemondb.net/sprites/black-white/normal/gastrodon-west.png" alt="Gastrodon" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Plácida</td>
+                              <td style="width: 50%">Nv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Colector</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white; background: radial-gradient(#C6C6A7, #6D6D4E);">Golpe Cuerpo</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#9DB7F5, #445E9C);">Danza Lluvia</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#9DB7F5, #445E9C);">Hidropulso</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#EBD69D, #927D44);">Bomba Fango</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#A7DB8D, #49392F); width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/shiftry"><img src="https://img.pokemondb.net/sprites/black-white/normal/shiftry-f.png" alt="Shiftry" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Seria</td>
+                              <td style="width: 50%">Nv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Early Bird</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A29288, #49392F);">Finta</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A7DB8D, #4E8234);">Ciclón de Hojas</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A29288, #49392F);">Maquinación</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A7DB8D, #4E8234);">Hoja Afilada</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%; background: radial-gradient(#A27DFA, #9C531F); border-color: white; width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/reshiram"><img src="https://img.pokemondb.net/sprites/black-white/normal/reshiram.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Alegre</td>
+                              <td style="width: 50%">Nv. 27</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Turbollama</td>
+                              <td><img src="https://cdn.bulbagarden.net/upload/3/39/TagOran.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#F5AC78, #9C531F)">Colmillo Fuego</td>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#D1C17D, #786824)">Poder Pasado</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#A27DFA, #4924A1)">Dracoaliento</td>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#FA92B2, #A13959)">Sellar</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#FA92B2, #6D5E9C);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/sigilyph"><img src="https://img.pokemondb.net/sprites/black-white/normal/sigilyph.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Miedosa</td>
+                              <td style="width: 50%">Nv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Magic Guard</td>
+                              <td><img src="https://cdn.bulbagarden.net/upload/5/50/TagSitrus.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white; background: radial-gradient(#FA92B2, #A13959);">Masa Cósmica</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#C6B7F5, #6D5E9C);">Tajo Aéreo</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#FA92B2, #A13959)">Psicorayo</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#FAE078, #A1871F)">Rayo Carga</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#D67873, #787887);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/lucario"><img src="https://img.pokemondb.net/sprites/black-white/normal/lucario.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Firme</td>
+                              <td style="width: 50%">Nv. 29</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Impasible</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white;background: radial-gradient(#D67873, #7D1F1A);">Palmeo</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#EBD69D, #927D44);">Ataque Óseo</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#D67873, #7D1F1A)">Contador</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#D67873, #7D1F1A)">Detección</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <!--
+                        https://cdn.bulbagarden.net/upload/archive/8/8e/20090709005535%21Spr_3r_000.png (Empty)
+                        #68A090 (Empty) #44685E (Border)
+                        -->
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#FAE078, #A1871F);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/luxray"><img src="https://img.pokemondb.net/sprites/black-white/normal/luxray-f.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Firme</td>
+                              <td style="width: 50%">Nv. 29</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Rivalidad</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white;background: radial-gradient(#FAE078, #A1871F)">Carga</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#FAE078, #A1871F)">Chispa</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#A29288, #49392F)">Mordisco</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#C6C6A7, #6D6D4E)">Contoneo</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <span class="close"></span>
+      </div>
+      <div id="myModal1" class="modal">
+         <div class="modal-content" style="background-color:#C3C3C3">
+            <div class="fila">
+               <div class="columnas lado">
+                  <div class="trainer"><img src="https://cdn.bulbagarden.net/upload/thumb/9/9e/Black_White_N.png/384px-Black_White_N.png" class= "imgtrainer"></div>
+               </div>
+               <div class="columnas medio">
+                  <div class="container-fluid">
+                     <div class="column4" style="padding: 20px; height:">
+                        <table style=" padding: 25px; border: solid 5px;   border-color: white; background: radial-gradient(#9DB7F5, #927D44); width: 100%; height:100%; border-radius: 2%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/gastrodon"><img src="https://img.pokemondb.net/sprites/black-white/normal/gastrodon-west.png" alt="Gastrodon" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Relaxed</td>
+                              <td style="width: 50%">Lv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Storm Drain</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white; background: radial-gradient(#C6C6A7, #6D6D4E);">Body Slam</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#9DB7F5, #445E9C);">Rain Dance</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#9DB7F5, #445E9C);">Water Pulse</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#EBD69D, #927D44);">Mud Bomb</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#A7DB8D, #49392F); width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/shiftry"><img src="https://img.pokemondb.net/sprites/black-white/normal/shiftry-f.png" alt="Shiftry" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Serious</td>
+                              <td style="width: 50%">Lv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Early Bird</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A29288, #49392F);">Feint Attack</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A7DB8D, #4E8234);">Leaf Tornado</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A29288, #49392F);">Nasty Plot</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#A7DB8D, #4E8234);">Razor Leaf</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%; background: radial-gradient(#A27DFA, #9C531F); border-color: white; width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/reshiram"><img src="https://img.pokemondb.net/sprites/black-white/normal/reshiram.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Jolly</td>
+                              <td style="width: 50%">Lv. 27</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Turboblaze</td>
+                              <td><img src="https://cdn.bulbagarden.net/upload/3/39/TagOran.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#F5AC78, #9C531F)">Fire Fang</td>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#D1C17D, #786824)">Ancient Power</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#A27DFA, #4924A1)">Dragon Breath</td>
+                              <td style="border: solid 3px white; border-radius: 5px; font-size: 15px; background: radial-gradient(#FA92B2, #A13959)">Imprison</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#FA92B2, #6D5E9C);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/sigilyph"><img src="https://img.pokemondb.net/sprites/black-white/normal/sigilyph.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Timid</td>
+                              <td style="width: 50%">Lv. 30</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Magic Guard</td>
+                              <td><img src="https://cdn.bulbagarden.net/upload/5/50/TagSitrus.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white; background: radial-gradient(#FA92B2, #A13959);">Cosmic Power</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#C6B7F5, #6D5E9C);">Air Slash</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#FA92B2, #A13959)">Psy Beam</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#FAE078, #A1871F)">Charge Beam</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#D67873, #787887);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/lucario"><img src="https://img.pokemondb.net/sprites/black-white/normal/lucario.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Adamant</td>
+                              <td style="width: 50%">Lv. 29</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Steadfast</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white;background: radial-gradient(#D67873, #7D1F1A);">Force Palm</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white; background: radial-gradient(#EBD69D, #927D44);">Bone Rush</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#D67873, #7D1F1A)">Counter</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#D67873, #7D1F1A)">Detect</td>
+                           </tr>
+                        </table>
+                     </div>
+                     <!--
+                        https://cdn.bulbagarden.net/upload/archive/8/8e/20090709005535%21Spr_3r_000.png (Empty)
+                        #68A090 (Empty) #44685E (Border)
+                        -->
+                     <div class="column4" style="padding: 20px">
+                        <table style="padding: 25px; border: solid 5px; border-radius: 2%;  border-color: white; background: radial-gradient(#FAE078, #A1871F);width: 100%;">
+                           <tr>
+                              <th colspan="2"><a href="http://pokemondb.net/pokedex/luxray"><img src="https://img.pokemondb.net/sprites/black-white/normal/luxray-f.png" alt="Reshiram" style="border: solid 1px black; border-radius: 30%; width: 100px; background-color: white;"></a></th>
+                           </tr>
+                           <tr style="width: 100%">
+                              <td style="font-size: 15px; text-align: center; width: 50%">Adamant</td>
+                              <td style="width: 50%">Lv. 29</td>
+                           </tr>
+                           <tr>
+                              <td style="font-size: 15px;">Rivalry</td>
+                              <td><img src="http://www.kurkuluxetan.eus/kk/wp-content/themes/jupiter/assets/images/dummy-images/dummy-transparent.png" style="width: 50px"></td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px;  border-color: white;background: radial-gradient(#FAE078, #A1871F)">Charge</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#FAE078, #A1871F)">Spark</td>
+                           </tr>
+                           <tr>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#A29288, #49392F)">Bite</td>
+                              <td style="border: solid 3px; border-radius: 5px; font-size: 15px; border-color: white;background: radial-gradient(#C6C6A7, #6D6D4E)">Swagger</td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <span class="close1"></span>
+      </div>
+      <script>
+         // Get the modal
+         var modal = document.getElementById("myModal");
+         var modal1 = document.getElementById("myModal1");
+         
+         // Get the button that opens the modal
+         var btn = document.getElementById("myBtn");
+         var btn1 = document.getElementById("myBtn1");
+         
+         // Get the <span> element that closes the modal
+         var span = document.getElementsByClassName("close");
+         var span1 = document.getElementsByClassName("close1");
+         // When the user clicks the button, open the modal 
+         btn.onclick = function() {
+           modal.style.display = "block";
+         }
+         btn1.onclick = function() {
+           modal1.style.display = "block";
+         }
+         // When the user clicks on <span> (x), close the modal
+         span.onclick = function() {
+           modal.style.display = "none";
+         }
+         span1.onclick = function() {
+           modal1.style.display = "none";
+         }
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+           if (event.target == modal) {
+             modal.style.display = "none";
+           }
+           if (event.target == modal1) {
+             modal1.style.display = "none";
+           }
+         }
+      </script>
+   </body>
 </html>
